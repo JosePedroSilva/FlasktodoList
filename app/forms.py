@@ -7,3 +7,4 @@ class NoteForm(FlaskForm):
     content = TextAreaField('Note:', validators=[DataRequired(),
                             Length(min=1, max=100)])
     submit = SubmitField('Submit')
+

@@ -6,6 +6,15 @@
     <title>To do List</title>
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}   
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
@@ -19,7 +28,7 @@
     </form>
     
     {% for note in notes %}
-    <div><p>{{ note.content }}</p></div>
+    <div><p>{{ note.content }} <a href="{{ url_for('delete_note', id=note.id) }}">Delete</a></p></div>
     {% endfor %}
     {% if prev_url %}
     <a href="{{ prev_url }}">Newer notes</a>
@@ -27,5 +36,7 @@
     {% if next_url %}
     <a href="{{ next_url }}">Older notes</a>
     {% endif %}
+
+
 </body>
 </html>

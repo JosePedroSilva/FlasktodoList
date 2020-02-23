@@ -14,7 +14,7 @@ def index():
         flash('Note saved')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    notes = Note.query.order_by(Note.timestamp.desc()).paginate(
+    notes = Note.query.order_by(Note.timestamp.desc()).filter_by(deleted=False).paginate(
         page, app.config['NOTES_PER_PAGE'], False)
     next_url = url_for('index', page=notes.next_num) \
         if notes.has_next else None
@@ -23,3 +23,11 @@ def index():
     return render_template('index.html', notes=notes.items, 
         	    form=form, title='HomePage', next_url=next_url,
                            prev_url=prev_url)
+
+
+@app.route('/delete/<id>', methods=['GET', 'POST'])
+def delete_note(id):
+    note = Note.query.filter_by(id=id).first_or_404()
+    note.delete_note()
+    flash('Note deleted')
+    return redirect(url_for('index'))
