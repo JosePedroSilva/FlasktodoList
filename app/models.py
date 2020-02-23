@@ -10,3 +10,9 @@ class Note(db.Model):
 
     def __repr__(self):
         return f'<Note: {self.content}>'
+
+    def delete_note(self, note):
+        n = Note.query.filter_by(id=note)
+        db.session.delete(n)
+        db.session.commit()
+    

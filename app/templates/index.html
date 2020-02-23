@@ -6,8 +6,26 @@
     <title>To do List</title>
 </head>
 <body>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.content.label }}<br>
+            {{ form.content(cols=100, rows=4) }}<br>
+            {% for error in form.content.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    
     {% for note in notes %}
-    <div><p>{{ note }}</p></div>
+    <div><p>{{ note.content }}</p></div>
     {% endfor %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer notes</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Older notes</a>
+    {% endif %}
 </body>
 </html>
