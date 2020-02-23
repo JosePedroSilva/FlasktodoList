@@ -1,1 +1,2 @@
 FLASK_APP=toDo.py
+FLASK_ENV=development
