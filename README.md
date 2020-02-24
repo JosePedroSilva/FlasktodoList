@@ -1,4 +1,4 @@
-# Flask To do list
+# Barebones Flask To Do List
 
 Structure of a to do list using Flask 
 ## Requirements
@@ -8,7 +8,7 @@ Python 3.6+, python-pip, virtualenv
 First, clone this repo
 
 ```
-$ git clone https://github.com/JosePedroSilva/FlasktodoList to update
+$ git clone https://github.com/JosePedroSilva/FlasktodoList 
 $ cd FlasktodoList
 ```
 
@@ -16,12 +16,11 @@ Create virtual environment
 
 ```
 $ python3 -m venv env
-$ virtualenv env
 $ source env/bin/activate
 (env) $ _
 ```
 
-Install all necessery dependencies
+Install all necessary dependencies
 
 ```
 $ pip install -r requirements.txt
