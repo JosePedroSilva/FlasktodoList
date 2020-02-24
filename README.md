@@ -8,8 +8,8 @@ Python 3.6+, python-pip, virtualenv
 First, clone this repo
 
 ```
-$ git clone http://github.com/JosePedroSilva/....to update
-$ cd 
+$ git clone https://github.com/JosePedroSilva/FlasktodoList to update
+$ cd FlasktodoList
 ```
 
 Create virtual environment 
@@ -34,8 +34,6 @@ For windows use set command
 Run the application:
 ```
 (env) $ flask run
- * Serving Flask app "microblog"
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 Access url to see web app
 ```
