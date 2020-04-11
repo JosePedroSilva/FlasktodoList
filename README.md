@@ -28,7 +28,7 @@ $ pip install -r requirements.txt
 Set the flask environment
 For windows use set command
 ```
-(env) $ export FLASK_APP=microblog.py
+(env) $ export FLASK_APP=toDO.py
 ```
 Run the application:
 ```
